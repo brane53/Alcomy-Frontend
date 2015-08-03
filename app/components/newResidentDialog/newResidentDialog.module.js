@@ -3,7 +3,7 @@
     angular
         .module('alcomyApp.newResidentDialog', [
             'alcomyApp.residents',
-            'ui-router'
+            'ui.router'
         ])
         .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
@@ -14,7 +14,7 @@
           $stateProvider
             .state('residents.newResident',{
                 url: '/newResident',
-              templateUrl: 'app/components/newResidentDialog/basic.html'
+                templateUrl: 'app/components/newResidentDialog/basic.html'
 
 
             });
