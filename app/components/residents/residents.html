@@ -1,0 +1,147 @@
+<!-- Left Sidebar -->
+<md-sidenav id="resident-sidenav-left"  class="md-sidenav-left md-whiteframe-z1" md-component-id="left" layout="row">
+    
+  <!-- Toolbar & Resident List Wrapper -->
+  <div layout="column" flex>
+    <!-- Sidenav Toolbar -->
+    <md-toolbar class="md-tall md-accent md-whiteframe-z2">
+      <form class="md-toolbar-tools" layout="column">
+        <md-input-container class="md-accent-theme">
+          <label>Search Residents</label>
+          <input type="text" ng-model="search.$" placeholder="Search Residents">
+        </md-input-container>
+
+      </form>
+      
+      <md-select ng-model="status">
+        <md-option ng-repeat="status in residents.statuses" value="{{status}}">{{status}}</md-option>
+      </md-select>
+      
+    </md-toolbar>
+    
+    <!-- Resident List Wrapper -->
+    <md-content md-scroll-y>
+      
+      <!-- Resident List -->
+      <md-list>
+        
+        <md-list-item layout="row" layout-align="start center" class="sidenav-list-item" ng-repeat="resident in residents.residents | filter: search" >
+          <!-- Resident Button -->
+          <md-button layout="row" layout-align="start center" ng-click="residents.setId($index)" flex>
+            
+            <img class="md-avatar" ng-src={{resident.avatar}}>
+            
+            
+            <p class="list-text">
+              {{resident.firstName}} {{resident.lastName}}
+            </p>
+            
+            <md-divider></md-divider>
+          </md-button>
+    
+          
+    
+        </md-list-item>
+      </md-list>
+
+    </md-content>
+
+  </div>
+
+  <!-- Sidenav Vertical Menu -->
+  <div layout="column" layout-align="start center" class="sidenav-vertical-menu">
+      
+    <!-- Green Menu Buttons -->
+    <div class="buttons-wrapper" layout="column" layout-align="start center">
+
+      <!-- 'Add New Resident' Menu Button -->
+      <md-button ng-click="residents.showNewResidentDialog($event)" class="md-icon-button" aria-label="Add New Resident">
+        <md-tooltip md-direction="right">
+          ADD NEW RESIDENT
+        </md-tooltip>
+        <md-icon class="md-accent" md-svg-src="bower_components/material-design-icons/social/svg/production/ic_person_add_24px.svg"></md-icon>
+      </md-button>
+      
+      <!-- 'Resident List' Menu Button -->
+      <md-button ng-click="app.toggle('left')" class="md-icon-button" aria-label="Resident List">
+        <md-tooltip md-direction="right">
+          RESIDENT LIST
+        </md-tooltip>
+        <md-icon class="md-accent" md-svg-src="bower_components/material-design-icons/social/svg/production/ic_group_24px.svg"></md-icon>
+      </md-button>
+
+    </div>
+
+    <md-divider></md-divider>
+
+    <!-- Blue Menu Buttons -->
+    <div class="buttons-wrapper" layout="column" layout-align="start center">
+
+      <!-- 'Logbook' Menu Button -->
+      <md-button  class="md-icon-button" aria-label="Logbook">
+        <md-tooltip md-direction="right">
+          LOGBOOK
+        </md-tooltip>
+        <md-icon class="md-primary" md-svg-src="bower_components/material-design-icons/social/svg/production/ic_person_add_24px.svg"></md-icon>
+      </md-button>
+      
+      <!-- 'Todo List' Menu Button -->
+      <md-button ui-sref="residents.todos.list" ui-sref-active="active" class="md-icon-button" aria-label="To Do's">
+        <md-tooltip md-direction="right">
+          TO-DO'S
+        </md-tooltip>
+        <md-icon class="md-primary" md-svg-src="bower_components/material-design-icons/action/svg/production/ic_assignment_turned_in_24px.svg"></md-icon>
+      </md-button>
+
+      <!-- 'Medications' Menu Button -->
+      <md-button class="md-icon-button" aria-label="Medications">
+        <md-tooltip md-direction="right">
+          MEDICATIONS
+        </md-tooltip>
+        <md-icon class="md-primary" md-svg-src="bower_components/material-design-icons/action/svg/production/ic_favorite_24px.svg"></md-icon>
+      </md-button>
+      
+      <!-- 'Care Plan' Menu Button -->
+      <md-button ng-click="" class="md-icon-button" aria-label="Care Plan">
+        <md-tooltip md-direction="right">
+          CARE PLAN
+        </md-tooltip>
+        <md-icon class="md-primary" md-svg-src="bower_components/material-design-icons/av/svg/production/ic_library_books_24px.svg"></md-icon>
+      </md-button>
+
+      <!-- 'Personal Info' Menu Button -->
+      <md-button ng-click="" class="md-icon-button" aria-label="Personal Info">
+        <md-tooltip md-direction="right">
+          PERSONAL INFO
+        </md-tooltip>
+        <md-icon class="md-primary" md-svg-src="bower_components/material-design-icons/communication/svg/production/ic_contact_phone_24px.svg"></md-icon>
+      </md-button>
+      
+      <!-- 'Documents' Menu Button -->
+      <md-button ng-click="" class="md-icon-button" aria-label="Documents">
+        <md-tooltip md-direction="right">
+          DOCUMENTS
+        </md-tooltip>
+        <md-icon class="md-primary" md-svg-src="bower_components/material-design-icons/action/svg/production/ic_description_24px.svg"></md-icon>
+      </md-button>
+
+      <!-- 'Reports' Menu Button -->
+      <md-button ng-click="" class="md-icon-button" aria-label="Reports">
+        <md-tooltip md-direction="right">
+          REPORTS
+        </md-tooltip>
+        <md-icon class="md-primary" md-svg-src="bower_components/material-design-icons/social/svg/production/ic_poll_24px.svg"></md-icon>
+      </md-button>
+    </div>
+
+  </div>
+
+</md-sidenav>
+
+
+<!-- Middle Content Wrapper -->
+<section ui-view class="center-container" layout="column" flex>
+  
+
+</section>
+  

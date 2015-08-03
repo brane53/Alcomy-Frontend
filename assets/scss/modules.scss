@@ -1,0 +1,283 @@
+/* .toolbar-items span {
+    margin-left: 1.4em;
+} */
+
+.placeholder {
+    margin: 100px;
+    height: 100%;
+    width: 100%;
+    padding: 100px;
+    background-color: rgba(193, 193, 193, 0.20);
+    h1 {
+        text-align: center;
+    }
+}
+
+
+
+body {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+md-toolbar .md-menu {
+  margin: 0; 
+}
+
+.right-toolbar-tools {
+    .md-avatar {
+        width: 40px;
+        height: 40px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-right: 16px;
+        border-radius: 50%;
+        box-sizing: content-box; 
+    }
+    p {
+        margin: 0;
+    }
+    md-menu-item > .md-button {
+        flex-direction: column;
+    }
+}
+
+
+#main-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+/* Main Navbar/Toolbar */
+.toolbar-items button {
+    margin-left: 1.4em;
+    margin-right: 1.4em;
+}
+
+/* Main Content Area */
+#main-content-wrapper {
+    position: relative;
+}
+
+/* Left Sidenav */
+#resident-sidenav-left {
+    position: relative;
+    overflow: auto;
+    z-index: 1;
+    md-content {
+        overflow-y: auto;
+    }
+    &.md-closed {
+        display: flex;
+    }
+    &.md-sidenav-left.md-closed {
+        margin-left: -259px;
+        transform: translate3d(0, 0, 0); 
+    }
+    md-input-container {
+        padding-bottom: 10px;
+        &:not(.md-input-invalid).md-input-focused md-input {
+            border-color: white;
+        }
+    }
+    md-select {
+        width: 100%;
+        md-select-label {
+            width: 100%;
+            margin: 0 16px;
+            background-color: white;
+            padding: 5px 10px;
+        }
+    }
+    
+}
+
+/* Sidenav Vertical Menu Styles */
+/* =========================================================================== */
+.sidenav-vertical-menu {
+    position: relative;
+    width: 45px;
+    background-color: #424242;
+    padding-top: 20px;
+
+    md-divider {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 90%;
+        border-top-color: rgba(255,255,255,0.2);
+    }
+
+    button.md-button, a.md-button,
+    button.md-button.md-icon-button, 
+    a.md-button.md-icon-button {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        height: 28px;
+        min-height: 28px;
+        line-height: 28px;
+        border-radius: 0;
+        &.active {
+            /* background-color: white; */
+            md-icon {
+            fill: white;
+        }
+        }
+
+    }
+
+    .buttons-wrapper {
+        width: 100%;
+
+        > button.md-button:nth-child(1n+2),
+         a.md-button:nth-child(1n+2),
+         button.md-button.md-icon-button:nth-child(1n+2),
+         a.md-button.md-icon-button:nth-child(1n+2){
+            margin-top: 28px;
+        }
+    }
+}
+
+/* Backdrop for Sidenav */
+/* =========================================================================== */
+
+
+md-backdrop.md-sidenav-backdrop {
+    display: none;
+}
+
+.sidenav-list-item.md-no-proxy{
+    padding: 0;
+}
+
+/* =========================================================================== */
+
+
+md-list-item {
+    margin: 0;
+    > button.md-button, a.md-button {
+        margin: 0;
+        display: flex;
+        flex-direction: row; // This should not have to be. layout="row"
+        padding-left: 16px;
+    }
+    
+}
+
+
+/* Any .md-avatar found within a md-list-item will get these properties */
+md-list-item .md-avatar {
+    width: 40px;
+    height: 40px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 16px;
+    border-radius: 50%;
+    box-sizing: content-box; 
+}
+
+
+/* Middle Section of the App */
+section.center-container {
+    position: relative;
+    z-index: 1;
+    padding: 40px;
+
+    md-whiteframe {
+        position: relative;
+        padding: 20px;
+        background-color: white;
+    }
+    .profile-header {
+        height: 175px;
+        margin-bottom: 20px;
+        img {
+            height: 100%;
+        }
+        .profile-summary-wrapper {
+            position: relative;
+            /* background-color: Cornsilk; */
+            margin-left: 20px;
+            padding: 0;
+
+            h3, h4 {
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+
+        }
+        
+    }
+    /* .profile-detail {
+        
+    } */
+
+}
+
+
+/* Submenu */
+
+.center-container {
+    > h1 {
+        margin-top: 0;
+    }
+
+    .submenu-container{
+        
+    }
+}
+
+
+// BUTTON STYLES
+// 
+// CAPSULE GROUP
+// 
+.md-button {
+    &.btn-group-capsule {
+        font-size: 16px;
+        margin: 8px 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: rgb(255,255,255);
+        background-color: rgba(3, 169, 244, 0.96);
+        text-transform: none;
+        font-weight: 400;
+        min-width:100px;
+        &:not([disabled]):hover {
+            background-color: rgba(193, 193, 193, 0.96);
+            color: rgba(40, 40, 40, 0.96);
+            transition: 0.3s;
+        }
+        &.btn-left {
+            border-radius: 10px 0 0 10px;
+        }
+        &.btn-middle {
+            border-radius: 0;
+            border-left: 1px solid rgba(230, 230, 230, 0.96);
+            border-right: 1px solid rgba(230, 230, 230, 0.96);
+        }
+        &.btn-right {
+            border-radius: 0 10px 10px 0;
+        }
+        &.active {
+            /* background-color: rgba(193, 193, 193, 0.96); */
+            background-color: #FF9800;
+        }
+    }
+
+}
+
+
+
+
+
+/* NEW RESIDENT DIALOG */
+
+#new-resident-dialog {
+    width:60%;
+    height:70%;
+}

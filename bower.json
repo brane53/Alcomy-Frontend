@@ -1,0 +1,31 @@
+{
+  "name": "Alcomy Frontend",
+  "version": "0.0.1",
+  "authors": [
+    "Brane Vrajich <brane53@gmail.com>"
+  ],
+  "description": "This app will act as a demo and will connected to firebase for its backend",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "angular": "1.4.1",
+    "angular-material": "master",
+    "angular-animate": "1.4.1",
+    "angular-aria": "1.4.1",
+    "angular-resource": "1.4.1",
+    "angular-material-icons": "0.5.0",
+    "material-design-icons": "2.0.0"
+  },
+  "dependencies": {
+    "angular": "1.4.1",
+    "angular-aria": "1.4.1",
+    "angular-resource": "1.4.1",
+    "angular-material": "master"
+  }
+}

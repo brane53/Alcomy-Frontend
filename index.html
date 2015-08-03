@@ -1,0 +1,191 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Alcomy App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Normalize -->
+    <link rel="stylesheet" href="assets/css/normalize.css">
+
+    <!-- Angular Material CSS -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+      
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+  </head>
+  <body ng-app="alcomyApp" id="main-wrapper" layout="column" ng-controller="appController as app">
+    
+
+    <!-- Top Menu Bar of the Application-->
+    <md-toolbar id="main-toolbar" class="md-primary" layout="row">
+
+      <div class="md-toolbar-tools">
+
+        <md-button ng-click="app.toggle('left')" class="md-icon-button" aria-label="Toggle Sidenav">
+          <md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/production/ic_menu_24px.svg"></md-icon>
+        </md-button>
+
+        <div class="toolbar-items" layout="row" layout-align="start center">
+
+          <md-button layout-align="middle center" ui-sref="dashboard" aria-label="Dashboard">
+            <span><h3>Dashboard</h3></span>
+          </md-button>
+
+          <md-button layout-align="middle center" ui-sref="residents.todos.list" aria-label="Residents">
+            <span>Residents</span>
+          </md-button>
+
+          <md-button layout-align="middle center" ui-sref="staff" aria-label="Staff">
+            <span>Staff</span>
+          </md-button>
+
+          <!-- <md-button layout-align="middle center" href="#/dashboard"><span>Schedule</span></md-button> -->
+
+        </div>
+          
+        <div class="right-toolbar-tools" flex layout="row" layout-align="end center">
+
+          <md-menu class="messages-menu" md-position-mode="target-right target">
+            <!-- Trigger element is a md-button with an icon -->
+            <!-- Messages Button -->
+            <md-button ng-click="$mdOpenMenu()" class="md-icon-button" aria-label="Open Messages" layout="column">
+              <md-icon md-svg-src="bower_components/material-design-icons/content/svg/production/ic_mail_24px.svg"></md-icon>
+            </md-button>
+
+            <md-menu-content width="4">
+
+              <md-menu-item ng-repeat="message in app.messages">
+                <md-button ng-click="doSomething()" layout="column">
+                  <p>{{message.sentBy}}</p>
+                  <p>"{{message.subject}}"</p>
+                </md-button>
+              </md-menu-item>
+
+            </md-menu-content>
+          </md-menu>
+          
+          <!-- User Picture Avatar -->
+          <img class="md-avatar" ng-src={{app.user.avatar}}>
+
+          <!-- Current User -->
+          <h3>{{app.user.firstName}} {{app.user.lastName}}</h2>
+
+          <!-- Settings Button and Menu -->
+          <md-menu md-position-mode="target-right target">
+            <!-- Trigger element is a md-button with an icon -->
+            <md-button ng-click="$mdOpenMenu()" class="md-icon-button" aria-label="Open Settings">
+              <md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/production/ic_more_vert_24px.svg"></md-icon>
+            </md-button>
+            <md-menu-content width="4">
+
+              <md-menu-item>
+                <md-button ng-click="doSomething()">Profile</md-button>
+              </md-menu-item>
+
+              <md-menu-item>
+                <md-button ng-click="doSomething()">Settings</md-button>
+              </md-menu-item>
+
+              <md-menu-item>
+                <md-button ng-click="doSomething()">Help</md-button>
+              </md-menu-item>
+
+            </md-menu-content>
+          </md-menu>
+
+
+        </div>
+          
+      </div>
+    </md-toolbar>
+
+
+    <!-- Main Content Area -->
+    
+    <!-- <ng-viewport layout="row" id="main-content-wrapper" flex>
+    </ng-viewport> -->
+    
+    <div ui-view layout="row" id="main-content-wrapper" flex></div>
+    
+    
+    
+
+
+    <!-- Vender Scripts -->
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="bower_components/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="bower_components/angular-material/angular-material.js"></script>
+    <script type="text/javascript" src="node_modules/angular-new-router/dist/router.es5.js"></script>
+      <!-- UI Router -->
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
+
+    <!-- App Specific Scripts -->
+
+    <!-- MAIN ALCOMYAPP MODULE -->
+    <script type="text/javascript" src="app/alcomyApp.module.js"></script>
+    <script type="text/javascript" src="app/alcomyApp.controller.js"></script>
+
+    <!-- USER -->
+    <script type="text/javascript" src="app/components/user/user.module.js"></script>
+    <script type="text/javascript" src="app/components/user/userService.js"></script>
+    <script type="text/javascript" src="app/components/user/userController.js"></script>
+
+    <!-- MESSAGING -->
+    <script type="text/javascript" src="app/components/messaging/messaging.module.js"></script>
+    <script type="text/javascript" src="app/components/messaging/messagingService.js"></script>
+    <script type="text/javascript" src="app/components/messaging/messagingController.js"></script>
+    
+    <!-- DASHBOARD -->
+    <script type="text/javascript" src="app/components/dashboard/dashboard.module.js"></script>
+    <script type="text/javascript" src="app/components/dashboard/dashboardController.js"></script>
+
+    <!-- RESIDENTS -->
+    <script type="text/javascript" src="app/components/residents/residents.module.js"></script>
+    <script type="text/javascript" src="app/components/residents/residentsService.js"></script>
+    <script type="text/javascript" src="app/components/residents/residentsController.js"></script>
+
+    <!-- RESIDENTS LOGBOOK SUBMENU -->
+    <script type="text/javascript" src="app/components/logbookSubmenu/logbookSubmenu.module.js"></script>
+    <script type="text/javascript" src="app/components/logbookSubmenu/logbookSubmenuController.js"></script>
+
+
+      <!-- RESIDENTS LOGBOOK OVERVIEW -->
+      <script type="text/javascript" src="app/components/logbookOverview/logbookOverview.module.js"></script>
+      <script type="text/javascript" src="app/components/logbookOverview/logbookOverviewController.js"></script>
+
+      <!-- RESIDENTS LOGBOOK NOTES -->
+      <script type="text/javascript" src="app/components/logbookNotes/logbookNotes.module.js"></script>
+      <script type="text/javascript" src="app/components/logbookNotes/logbookNotesController.js"></script>
+
+    <!-- RESIDENTS TODO SUBMENU -->
+
+    <!-- <script type="text/javascript" src="app/components/todoSubmenu/todoSubmenu.module.js"></script>
+    <script type="text/javascript" src="app/components/todoSubmenu/todoSubmenuController.js"></script> -->
+
+    <!-- RESIDENTS TODOS -->
+    <script type="text/javascript" src="app/components/residentsTodos/residentsTodos.module.js"></script>
+    <script type="text/javascript" src="app/components/residentsTodos/residentsTodosController.js"></script>
+
+    <!-- RESIDENTS TODOS LIST-->
+    <script type="text/javascript" src="app/components/residentsTodosList/residentsTodosList.module.js"></script>
+    <script type="text/javascript" src="app/components/residentsTodosList/residentsTodosListController.js"></script>
+    
+    <!-- STAFF -->
+    <script type="text/javascript" src="app/components/staff/staff.module.js"></script>
+    <script type="text/javascript" src="app/components/staff/staffService.js"></script>
+    <script type="text/javascript" src="app/components/staff/staffController.js"></script>
+   
+
+
+    <!-- All Scripts Concatinated and Minified  -->
+    <!-- <script type="text/javascript" src="production/scripts.js"></script> -->
+    <script></script>
+  </body>
+</html>

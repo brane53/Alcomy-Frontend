@@ -1,0 +1,207 @@
+/* .toolbar-items span {
+    margin-left: 1.4em;
+} */
+.placeholder {
+  margin: 100px;
+  height: 100%;
+  width: 100%;
+  padding: 100px;
+  background-color: rgba(193, 193, 193, 0.2); }
+  .placeholder h1 {
+    text-align: center; }
+
+body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+md-toolbar .md-menu {
+  margin: 0; }
+
+.right-toolbar-tools .md-avatar {
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 16px;
+  border-radius: 50%;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; }
+.right-toolbar-tools p {
+  margin: 0; }
+.right-toolbar-tools md-menu-item > .md-button {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+#main-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%; }
+
+/* Main Navbar/Toolbar */
+.toolbar-items button {
+  margin-left: 1.4em;
+  margin-right: 1.4em; }
+
+/* Main Content Area */
+#main-content-wrapper {
+  position: relative; }
+
+/* Left Sidenav */
+#resident-sidenav-left {
+  position: relative;
+  overflow: auto;
+  z-index: 1; }
+  #resident-sidenav-left md-content {
+    overflow-y: auto; }
+  #resident-sidenav-left.md-closed {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  #resident-sidenav-left.md-sidenav-left.md-closed {
+    margin-left: -259px;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+  #resident-sidenav-left md-input-container {
+    padding-bottom: 10px; }
+    #resident-sidenav-left md-input-container:not(.md-input-invalid).md-input-focused md-input {
+      border-color: white; }
+  #resident-sidenav-left md-select {
+    width: 100%; }
+    #resident-sidenav-left md-select md-select-label {
+      width: 100%;
+      margin: 0 16px;
+      background-color: white;
+      padding: 5px 10px; }
+
+/* Sidenav Vertical Menu Styles */
+/* =========================================================================== */
+.sidenav-vertical-menu {
+  position: relative;
+  width: 45px;
+  background-color: #424242;
+  padding-top: 20px; }
+  .sidenav-vertical-menu md-divider {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 90%;
+    border-top-color: rgba(255, 255, 255, 0.2); }
+  .sidenav-vertical-menu button.md-button, .sidenav-vertical-menu a.md-button, .sidenav-vertical-menu button.md-button.md-icon-button, .sidenav-vertical-menu a.md-button.md-icon-button {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    height: 28px;
+    min-height: 28px;
+    line-height: 28px;
+    border-radius: 0; }
+    .sidenav-vertical-menu button.md-button.active, .sidenav-vertical-menu a.md-button.active, .sidenav-vertical-menu button.md-button.md-icon-button.active, .sidenav-vertical-menu a.md-button.md-icon-button.active {
+      /* background-color: white; */ }
+      .sidenav-vertical-menu button.md-button.active md-icon, .sidenav-vertical-menu a.md-button.active md-icon, .sidenav-vertical-menu button.md-button.md-icon-button.active md-icon, .sidenav-vertical-menu a.md-button.md-icon-button.active md-icon {
+        fill: white; }
+  .sidenav-vertical-menu .buttons-wrapper {
+    width: 100%; }
+    .sidenav-vertical-menu .buttons-wrapper > button.md-button:nth-child(1n+2), .sidenav-vertical-menu .buttons-wrapper a.md-button:nth-child(1n+2), .sidenav-vertical-menu .buttons-wrapper button.md-button.md-icon-button:nth-child(1n+2), .sidenav-vertical-menu .buttons-wrapper a.md-button.md-icon-button:nth-child(1n+2) {
+      margin-top: 28px; }
+
+/* Backdrop for Sidenav */
+/* =========================================================================== */
+md-backdrop.md-sidenav-backdrop {
+  display: none; }
+
+.sidenav-list-item.md-no-proxy {
+  padding: 0; }
+
+/* =========================================================================== */
+md-list-item {
+  margin: 0; }
+  md-list-item > button.md-button, md-list-item a.md-button {
+    margin: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-left: 16px; }
+
+/* Any .md-avatar found within a md-list-item will get these properties */
+md-list-item .md-avatar {
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 16px;
+  border-radius: 50%;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; }
+
+/* Middle Section of the App */
+section.center-container {
+  position: relative;
+  z-index: 1;
+  padding: 40px;
+  /* .profile-detail {
+        
+    } */ }
+  section.center-container md-whiteframe {
+    position: relative;
+    padding: 20px;
+    background-color: white; }
+  section.center-container .profile-header {
+    height: 175px;
+    margin-bottom: 20px; }
+    section.center-container .profile-header img {
+      height: 100%; }
+    section.center-container .profile-header .profile-summary-wrapper {
+      position: relative;
+      /* background-color: Cornsilk; */
+      margin-left: 20px;
+      padding: 0; }
+      section.center-container .profile-header .profile-summary-wrapper h3, section.center-container .profile-header .profile-summary-wrapper h4 {
+        margin-top: 0;
+        margin-bottom: 10px; }
+
+/* Submenu */
+.center-container > h1 {
+  margin-top: 0; }
+
+.md-button.btn-group-capsule {
+  font-size: 16px;
+  margin: 8px 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  background-color: rgba(3, 169, 244, 0.96);
+  text-transform: none;
+  font-weight: 400;
+  min-width: 100px; }
+  .md-button.btn-group-capsule:not([disabled]):hover {
+    background-color: rgba(193, 193, 193, 0.96);
+    color: rgba(40, 40, 40, 0.96);
+    -webkit-transition: 0.3s;
+            transition: 0.3s; }
+  .md-button.btn-group-capsule.btn-left {
+    border-radius: 10px 0 0 10px; }
+  .md-button.btn-group-capsule.btn-middle {
+    border-radius: 0;
+    border-left: 1px solid rgba(230, 230, 230, 0.96);
+    border-right: 1px solid rgba(230, 230, 230, 0.96); }
+  .md-button.btn-group-capsule.btn-right {
+    border-radius: 0 10px 10px 0; }
+  .md-button.btn-group-capsule.active {
+    /* background-color: rgba(193, 193, 193, 0.96); */
+    background-color: #FF9800; }
+
+/* NEW RESIDENT DIALOG */
+#new-resident-dialog {
+  width: 60%;
+  height: 70%; }
