@@ -11,10 +11,12 @@
             .when('', '/newResident');*/
 
 
-          $stateProvider
-            .state('residents.newResident',{
+        $stateProvider
+            .state('newResidentDialog',{
                 url: '/newResident',
-                templateUrl: 'app/components/newResidentDialog/basic.html'
+                templateUrl: 'app/components/newResidentDialog/basic.html',
+                controller: 'NewResidentDialogController',
+                controllerAs: 'dialog'
 
 
             });
