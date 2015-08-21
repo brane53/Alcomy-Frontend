@@ -253,15 +253,15 @@ section.center-container {
             transition: 0.3s;
         }
         &.btn-left {
-            border-radius: 10px 0 0 10px;
+            border-radius: 5px 0 0 5px;
+            border-right: 1px solid rgba(230, 230, 230, 0.96);
         }
         &.btn-middle {
             border-radius: 0;
-            border-left: 1px solid rgba(230, 230, 230, 0.96);
             border-right: 1px solid rgba(230, 230, 230, 0.96);
         }
         &.btn-right {
-            border-radius: 0 10px 10px 0;
+            border-radius: 0 5px 5px 0;
         }
         &.active {
             /* background-color: rgba(193, 193, 193, 0.96); */
@@ -280,4 +280,107 @@ section.center-container {
 #new-resident-dialog {
     width:60%;
     height:70%;
+
+    md-dialog-content {
+        width: 100%;
+        form {
+            display: flex;
+        }
+        .dialog-panel {
+            padding-left: 24px;
+            padding-right: 24px;
+
+            &.left {
+                border-right: 1px solid #BDBDBD;
+            }
+            
+            &.right {
+                border-left: 1px solid #BDBDBD;
+            }
+        }
+    }
 }
+
+
+/* MEDICATION LIST TOOLBAR */
+
+.med-list-toolbar {
+    height: 60px;
+    padding: 0 10px;
+    /* background-color: #FFFCCA; */
+}
+
+
+/* MEDICATIONS TABLE */
+
+.med-table {
+    width: 100%;
+    
+    th {
+
+        height: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-bottom: 2px solid #BDBDBD;
+        /* border-left: 1px solid #BDBDBD;
+        border-right: 1px solid #BDBDBD; */
+
+
+        &:nth-child(1) {
+            width: 30px;
+        }
+        &:nth-child(2) {
+            width: 30px;
+        }
+        &:nth-child(3) {
+            width: 30px;
+        }
+        &:nth-child(4) {
+            width: 200px;
+        }
+        &:nth-child(5) {
+           width: 150px;
+        }
+        &:nth-child(6) {
+            width: 300px;
+        }
+        &:nth-child(7) {
+            width: 100px;
+        }
+        &:nth-child(8) {
+            
+        }
+        &:nth-child(9) {
+            
+        }
+        &:nth-child(10) {
+
+        }
+        &:nth-child(11) {
+
+        }
+    }
+    tbody tr:hover {
+        background-color: #BDBDBD;
+    }
+    td {
+        padding: 10px 10px;
+        /* border: 1px solid #BDBDBD; */
+        &:nth-child(1) {
+            color: #BDBDBD;
+        }
+        
+    }
+    .even {
+        background-color: #F5F5F5;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .text-left {
+        text-align: left;
+    }
+
+}
+
+

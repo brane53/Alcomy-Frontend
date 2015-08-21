@@ -50654,10 +50654,9 @@ angular.module('ngResource', ['ng']).
 
         .run(['$rootScope', '$state', '$stateParams', function ($rootScope,   $state,   $stateParams) {
 
-            // It's very handy to add references to $state and $stateParams to the $rootScope
-            // so that you can access them from any scope within your applications.For example,
-            // <li ng-class="{ active: $state.includes('contacts.list') }"> will set the <li>
-            // to active whenever 'contacts.list' or one of its decendents is active.
+            /** It's very handy to add references to $state and $stateParams to the $rootScope so that you can access them from any scope within your applications.For example,
+            <li ng-class="{ active: $state.includes('contacts.list') }"> 
+            will set the <li> to active whenever 'contacts.list' or one of its decendents is active.**/
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
             }
@@ -50730,6 +50729,18 @@ angular.module('ngResource', ['ng']).
             .state('residents.todos.groups',{
               url: '/groups',
               templateUrl: 'app/components/residentsTodosGroups/residentsTodosGroups.html'
+
+            })
+            .state('residents.meds',{
+              abstract: true,
+              url: '/medications',
+              templateUrl: 'app/components/residentMeds/residentMeds.html',
+              controller: 'ResidentMedsController as meds'
+
+            })
+            .state('residents.meds.list',{
+              url: '/list',
+              templateUrl: 'app/components/residentMedsList/residentMedsList.html',
 
             });
 

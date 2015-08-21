@@ -3,12 +3,11 @@
     angular
         .module('alcomyApp.newResidentDialog', [
             'alcomyApp.residents',
-            'ui.router'
+            'ui.router',
+            'ngMessages'
         ])
-        .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+        /*.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
-          /*$urlRouterProvider
-            .when('', '/newResident');*/
 
 
         $stateProvider
@@ -16,11 +15,11 @@
                 url: '/newResident',
                 templateUrl: 'app/components/newResidentDialog/basic.html',
                 controller: 'NewResidentDialogController',
-                controllerAs: 'dialog'
+                controllerAs: 'newResident'
 
 
             });
 
 
-        }]);
+        }])*/;
 })();

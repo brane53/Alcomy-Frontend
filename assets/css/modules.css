@@ -190,13 +190,13 @@ section.center-container {
     -webkit-transition: 0.3s;
             transition: 0.3s; }
   .md-button.btn-group-capsule.btn-left {
-    border-radius: 10px 0 0 10px; }
+    border-radius: 5px 0 0 5px;
+    border-right: 1px solid rgba(230, 230, 230, 0.96); }
   .md-button.btn-group-capsule.btn-middle {
     border-radius: 0;
-    border-left: 1px solid rgba(230, 230, 230, 0.96);
     border-right: 1px solid rgba(230, 230, 230, 0.96); }
   .md-button.btn-group-capsule.btn-right {
-    border-radius: 0 10px 10px 0; }
+    border-radius: 0 5px 5px 0; }
   .md-button.btn-group-capsule.active {
     /* background-color: rgba(193, 193, 193, 0.96); */
     background-color: #FF9800; }
@@ -205,3 +205,61 @@ section.center-container {
 #new-resident-dialog {
   width: 60%;
   height: 70%; }
+  #new-resident-dialog md-dialog-content {
+    width: 100%; }
+    #new-resident-dialog md-dialog-content form {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; }
+    #new-resident-dialog md-dialog-content .dialog-panel {
+      padding-left: 24px;
+      padding-right: 24px; }
+      #new-resident-dialog md-dialog-content .dialog-panel.left {
+        border-right: 1px solid #BDBDBD; }
+      #new-resident-dialog md-dialog-content .dialog-panel.right {
+        border-left: 1px solid #BDBDBD; }
+
+/* MEDICATION LIST TOOLBAR */
+.med-list-toolbar {
+  height: 60px;
+  padding: 0 10px;
+  /* background-color: #FFFCCA; */ }
+
+/* MEDICATIONS TABLE */
+.med-table {
+  width: 100%; }
+  .med-table th {
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 2px solid #BDBDBD;
+    /* border-left: 1px solid #BDBDBD;
+        border-right: 1px solid #BDBDBD; */ }
+    .med-table th:nth-child(1) {
+      width: 30px; }
+    .med-table th:nth-child(2) {
+      width: 30px; }
+    .med-table th:nth-child(3) {
+      width: 30px; }
+    .med-table th:nth-child(4) {
+      width: 200px; }
+    .med-table th:nth-child(5) {
+      width: 150px; }
+    .med-table th:nth-child(6) {
+      width: 300px; }
+    .med-table th:nth-child(7) {
+      width: 100px; }
+  .med-table tbody tr:hover {
+    background-color: #BDBDBD; }
+  .med-table td {
+    padding: 10px 10px;
+    /* border: 1px solid #BDBDBD; */ }
+    .med-table td:nth-child(1) {
+      color: #BDBDBD; }
+  .med-table .even {
+    background-color: #F5F5F5; }
+  .med-table .text-center {
+    text-align: center; }
+  .med-table .text-left {
+    text-align: left; }

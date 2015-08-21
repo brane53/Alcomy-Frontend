@@ -15,7 +15,54 @@
                 lastName: 'Vrajich',
                 age: 27,
                 favoriteRestaurant: 'Tucanos',
-                avatar: 'production/assets/images/avatars/brane.jpg'
+                avatar: 'production/assets/images/avatars/brane.jpg',
+                medications: [
+                    {
+                    id: 1,
+                    status: 'active',
+                    name: 'Alphagan',
+                    strength: '0.6%',
+                    instructions: "take 2 daily",
+                    script: "8/6/2012",
+                    quantity: 10,
+                    type: 'MAR'
+                        
+                    },
+                    {
+                    id: 2,
+                    status: 'active',
+                    name: 'Tylanol',
+                    strength: '0.6%',
+                    instructions: "take 2 daily",
+                    script: "8/6/2013",
+                    quantity: 60,
+                    type: 'MAR'
+
+                    },
+                    {
+                    id: 3,
+                    status: 'active',
+                    name: 'Rasapan',
+                    strength: '1.8%',
+                    instructions: "This should be taken as needed",
+                    script: "8/6/2012",
+                    quantity: 10,
+                    type: 'PRN'
+                        
+                    },
+                    {
+                    id: 4,
+                    status: 'discontinued',
+                    name: 'Asprin',
+                    strength: '200mg',
+                    instructions: "take 4 daily",
+                    script: "8/6/2013",
+                    quantity: 40,
+                    type: 'PRN'
+
+                    }
+                    
+                ]
             },
             {
                 residentId: 2,
@@ -90,6 +137,25 @@
                 avatar: 'production/assets/images/avatars/kevin.jpg'
             }
         ];
+
+        self.getResident = getResident;
+
+        function getResident(id){
+            
+            if(self.residents){
+                for (var i = 0; i < self.residents.length; i++){
+                    $log.log('From the resident Service');
+                    $log.log(self.residents[i])
+                    if(self.residents[i].residentId === id){
+                        return self.residents[i];
+                    }
+                }
+            }
+            else{
+                return;
+            }
+
+        }
 
         $log.info('Resident Service is Working');
 

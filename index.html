@@ -19,7 +19,7 @@
   </head>
   <body ng-app="alcomyApp" id="main-wrapper" layout="column" ng-controller="appController as app">
     
-
+    
     <!-- Top Menu Bar of the Application-->
     <md-toolbar id="main-toolbar" class="md-primary" layout="row">
 
@@ -120,8 +120,12 @@
 
     <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
     <script type="text/javascript" src="bower_components/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="bower_components/angular-messages/angular-messages.js"></script>
     <script type="text/javascript" src="bower_components/angular-material/angular-material.js"></script>
     <script type="text/javascript" src="node_modules/angular-new-router/dist/router.es5.js"></script>
+
+    <script type="text/javascript" src="bower_components/angular-smart-table/dist/smart-table.js"></script>
+
       <!-- UI Router -->
     <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
@@ -178,9 +182,20 @@
     <script type="text/javascript" src="app/components/residentsTodos/residentsTodos.module.js"></script>
     <script type="text/javascript" src="app/components/residentsTodos/residentsTodosController.js"></script>
 
-    <!-- RESIDENTS TODOS LIST-->
-    <script type="text/javascript" src="app/components/residentsTodosList/residentsTodosList.module.js"></script>
-    <script type="text/javascript" src="app/components/residentsTodosList/residentsTodosListController.js"></script>
+      <!-- RESIDENTS TODOS LIST-->
+      <script type="text/javascript" src="app/components/residentsTodosList/residentsTodosList.module.js"></script>
+      <script type="text/javascript" src="app/components/residentsTodosList/residentsTodosListController.js"></script>
+
+
+    <!-- RESIDENT MEDICATIONS -->
+    <script type="text/javascript" src="app/components/residentMeds/residentMeds.module.js"></script>
+    <script type="text/javascript" src="app/components/residentMeds/medicationsService.js"></script>
+    <script type="text/javascript" src="app/components/residentMeds/residentMedsController.js"></script>
+    
+      <!-- RESIDENT MEDICATIONS LIST-->
+      <script type="text/javascript" src="app/components/residentMedsList/residentMedsList.module.js"></script>
+      <script type="text/javascript" src="app/components/residentMedsList/residentMedsListController.js"></script>
+
     
     <!-- STAFF -->
     <script type="text/javascript" src="app/components/staff/staff.module.js"></script>

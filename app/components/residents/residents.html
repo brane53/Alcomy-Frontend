@@ -27,7 +27,7 @@
         
         <md-list-item layout="row" layout-align="start center" class="sidenav-list-item" ng-repeat="resident in residents.residents | filter: search" >
           <!-- Resident Button -->
-          <md-button layout="row" layout-align="start center" ng-click="residents.setId($index)" flex>
+          <md-button layout="row" layout-align="start center" ng-click="" flex>
             
             <img class="md-avatar" ng-src={{resident.avatar}}>
             
@@ -55,7 +55,7 @@
     <div class="buttons-wrapper" layout="column" layout-align="start center">
 
       <!-- 'Add New Resident' Menu Button -->
-      <md-button ui-sref="" ng-click="residents.showNewResidentDialog($event)" class="md-icon-button" aria-label="Add New Resident">
+      <md-button ng-click="residents.showNewResidentDialog($event)" class="md-icon-button" aria-label="Add New Resident">
         <md-tooltip md-direction="right">
           ADD NEW RESIDENT
         </md-tooltip>
@@ -86,7 +86,7 @@
       </md-button>
       
       <!-- 'Todo List' Menu Button -->
-      <md-button ui-sref="residents.todos.list" ui-sref-active="active" class="md-icon-button" aria-label="To Do's">
+      <md-button ui-sref="residents.todos.list" ng-class="[md-icon-button, {active:$state.includes('residents.todos')}]" aria-label="To Do's">
         <md-tooltip md-direction="right">
           TO-DO'S
         </md-tooltip>
@@ -94,7 +94,7 @@
       </md-button>
 
       <!-- 'Medications' Menu Button -->
-      <md-button class="md-icon-button" aria-label="Medications">
+      <md-button ui-sref="residents.meds.list" ng-class="[md-icon-button, {active:$state.includes('residents.meds')}]" aria-label="Medications">
         <md-tooltip md-direction="right">
           MEDICATIONS
         </md-tooltip>

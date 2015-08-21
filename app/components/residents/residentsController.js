@@ -59,24 +59,33 @@
         ];
 
         vm.showNewResidentDialog = showNewResidentDialog;
-
+        
+        /**
+         *  [showNewResidentDialog displays a form to add
+         *  a new resident. It is a custom dialog created
+         *  with the $mdDialog service from Angular
+         *  Material.]
+         *   
+         *  @param  {[type]} $event [This is the event
+         *  object from the event that called the
+         *  function]
+         */
         function showNewResidentDialog($event){
             var parentElement = angular.element(document.body);
+
             $mdDialog.show({
                 parent: parentElement,
                 targetEvent: $event,
                 templateUrl:'app/components/newResidentDialog/newResidentDialog.html',
                 controller: 'NewResidentDialogController',
-                controllerAs: 'resDialog'
+                controllerAs: 'newResident'
               });
 
         }
 
 
 
-
-
-        var params = $stateParams.residentId
+        var params = $stateParams.residentId;
         $log.info('Residents Controller working');
         console.log('State Params: ' + params);
         $log.info('vm oject:');

@@ -1,0 +1,46 @@
+<div class="med-list-toolbar" layout="row" layout-align="start center">
+  <li>Tool 1</li>
+</div>
+
+
+
+
+<table st-table="meds.medications" class="med-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>
+        <input type="checkbox">
+      </th>
+      <th></th>
+      <th ng-class="'text-left'">Name</th>
+      <th>Strength</th>
+      <th ng-class="'text-left'">Instructions</th>
+      <th>Script</th>
+      <th>Qty</th>
+      <th>Type</th>
+      <th>Resources</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="med in meds.medications" ng-class="[{even: $even}]">
+      <td ng-class="'text-center'">{{$index + 1}}</td>
+      <td ng-class="'text-center'">
+        <input type="checkbox">
+      </td> <!-- Checkbox -->
+      <td></td> <!-- Status Indicator -->
+      <td>{{med.name}}</td>
+      <td ng-class="'text-center'">{{med.strength}}</td>
+      <td>{{med.instructions}}</td>
+      <td ng-class="'text-center'">{{med.script}}</td>
+      <td ng-class="'text-center'">{{med.quantity}}</td>
+      <td ng-class="'text-center'">{{med.type}}</td>
+      <td></td> <!-- Resources -->
+      <td></td> <!-- Buttons -->
+    </tr>
+  </tbody>
+</table>
+      
+
+

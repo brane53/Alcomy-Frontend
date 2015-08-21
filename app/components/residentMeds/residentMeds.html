@@ -1,0 +1,52 @@
+<!-- RESIDENTS TODOS -->
+<!-- Resident Profile Header -->
+  <h1>Medications</h1>
+  <md-whiteframe layout="row" class="profile-header md-whiteframe-z3">
+
+    <img class="profile-picture md-whiteframe-z2" ng-src="assets/images/avatars/brane.jpg">
+
+    <div class="profile-summary-wrapper" layout="column" flex>
+      <h3>Brane Vrajich</h3>
+      <h4>Age: 27</h4>
+
+      <!-- Todo Submenu -->
+      <div layout="column" layout-align="end start" class="submenu" flex>
+        <div class="submenu-container" layout="row">
+
+          <md-button ui-sref-active="active" ui-sref="residents.meds.list" class="btn-group-capsule btn-left">
+              Current
+          </md-button>
+
+          <md-button ui-sref-active="active" class="btn-group-capsule btn-middle">
+              Omitted
+          </md-button>
+
+          <md-button ui-sref-active="active" class="btn-group-capsule btn-middle">
+              Destroyed
+          </md-button>
+
+          <md-button ui-sref="residents.meds.scripts" ui-sref-active="active" class="btn-group-capsule btn-middle">
+              Scripts
+          </md-button>
+
+          <md-button ui-sref="residents.meds.history" ui-sref-active="active" class="btn-group-capsule btn-right">
+              History
+          </md-button>
+        </div>
+
+      </div>
+    </div>
+    
+  </md-whiteframe>
+  
+  <!-- Resident Detail -->
+
+  <md-whiteframe layout="column" class="profile-detail md-whiteframe-z3" flex>
+
+      <!-- <div ng-viewport="content"></div> -->
+      <!-- ui-view may need to go in the md-content -->
+
+      <div ui-view flex layout="column"></div> 
+      
+    
+  </md-whiteframe>
