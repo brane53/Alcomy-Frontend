@@ -10,11 +10,14 @@
         
         self.getMedications = getMedications;
 
-
+        /**
+         * Gets all the medications for a specific resident
+         * @param {Integer} residentId
+         * @returns {residentsService.residents.medications|*|residentMedsController.medications}
+         */
         function getMedications(residentId) {
-            var medications = 
-            residentsService.getResident(residentId).medications;
-            return medications;
+            return residentsService.getResident(residentId).medications;
         }
+
     }
 })();
