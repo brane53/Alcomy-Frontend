@@ -12,7 +12,7 @@
 
         /**
          * Gets all the medications for a specific resident
-         * @param {Integer} residentId
+         * @param residentId
          * @returns {residentsService.residents.medications|*|residentMedsController.medications}
          */
         function getMedications(residentId) {

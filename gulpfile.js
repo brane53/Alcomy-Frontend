@@ -25,12 +25,11 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('assets/css'))
         .pipe(livereload());
 
-    /*gulp.src('assets/css/styles.css')
+    gulp.src('assets/css/styles.css')
         .pipe(plumber())
         .pipe(minifycss())
         .pipe(gulp.dest('production'))
-        .pipe(livereload());*/
-}); 
+});
 
 
 
@@ -39,7 +38,9 @@ gulp.task('sass', function () {
 // Concatinates JS files to production/scripts.js
  
 gulp.task('scripts', function(){
-    gulp.src(['bower_components/angular/angular.js',
+    gulp.src([
+        /*Vender Scripts*/
+        'bower_components/angular/angular.js',
         'bower_components/angular-animate/angular-animate.js',
         'bower_components/angular-aria/angular-aria.js',
         'bower_components/angular-material/angular-material.js',
@@ -86,6 +87,18 @@ gulp.task('watch', function() {
     gulp.watch('app/**/*.js', ['scripts']);
     gulp.watch('index.html', ['refresh', 'imageResize']);
     gulp.watch('app/**/*.html', ['refresh'])
+
+
+});
+
+gulp.task('watch-no-live', function() {
+
+    gulp.watch('assets/scss/*.scss', ['sass']);
+
+    // watch for JS changes
+
+    gulp.watch('app/**/*.js', ['scripts']);
+    gulp.watch('app/**/*.html', ['imageResize']);
 
 
 });

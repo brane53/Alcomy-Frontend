@@ -1,6 +1,7 @@
 /* .toolbar-items span {
     margin-left: 1.4em;
 } */
+/*This is a gray rec placeholder*/
 .placeholder {
   margin: 100px;
   height: 100%;
@@ -16,6 +17,14 @@ body {
   right: 0;
   bottom: 0;
   left: 0; }
+
+/*Main Toolbar*/
+#main-toolbar {
+  color: white; }
+  #main-toolbar .md-button {
+    color: white; }
+  #main-toolbar md-icon {
+    color: white; }
 
 md-toolbar .md-menu {
   margin: 0; }
@@ -79,6 +88,13 @@ md-toolbar .md-menu {
       margin: 0 16px;
       background-color: white;
       padding: 5px 10px; }
+
+/*Right Sidenav*/
+#resident-sidenav-right {
+  background-color: tan;
+  position: relative;
+  overflow: auto;
+  z-index: 1; }
 
 /* Sidenav Vertical Menu Styles */
 /* =========================================================================== */

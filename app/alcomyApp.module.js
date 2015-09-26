@@ -35,6 +35,9 @@
           })
           .warnPalette('red');
         }])
+
+
+
         /*.config(['$componentLoaderProvider', function($componentLoaderProvider){
 
           $componentLoaderProvider.setTemplateMapping(function (componentName) {

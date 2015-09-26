@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Angular Material" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/bower_components/angular-material/modules/css" />
+        <item url="file://$PROJECT_DIR$/bower_components/angular-material/modules/closure" />
+        <item url="file://$PROJECT_DIR$/bower_components/angular-material/modules/js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/bower_components/angular-material/modules/css" />
+      <root url="file://$PROJECT_DIR$/bower_components/angular-material/modules/closure" />
+      <root url="file://$PROJECT_DIR$/bower_components/angular-material/modules/js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
