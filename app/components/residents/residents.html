@@ -4,43 +4,34 @@
   <!-- Toolbar & Resident List Wrapper -->
   <div layout="column" flex>
     <!-- Sidenav Toolbar -->
-    <md-toolbar class="md-tall md-accent md-whiteframe-z2">
-      <form class="md-toolbar-tools" layout="column">
+    <md-toolbar md-theme="background" layout="column" layout-align="space-around center" class="md-tall md-hue-2 md-whiteframe-z2">
+      <!--Resident Search Filter-->
+      <div class="" layout-fill layout-padding layout="column">
         <md-input-container class="md-accent-theme">
           <label>Search Residents</label>
-          <input type="text" ng-model="search.$" placeholder="Search Residents">
+          <input type="text" ng-model="residents.searchFilter">
         </md-input-container>
+        <!--Residents Select Filter-->
+        <md-select ng-model="residents.statusFilter" aria-label="Filter Residents">
+          <md-option ng-repeat="status in residents.statuses" ng-value="status.value">{{status.name}}</md-option>
+        </md-select>
+      </div>
 
-      </form>
-      
-      <md-select ng-model="status">
-        <md-option ng-repeat="status in residents.statuses" value="{{status}}">{{status}}</md-option>
-      </md-select>
-      
     </md-toolbar>
     
     <!-- Resident List Wrapper -->
     <md-content md-scroll-y>
       
       <!-- Resident List -->
-      <md-list>
+      <md-list class="resident-list">
         
-        <md-list-item layout="row" layout-align="start center" class="sidenav-list-item" ng-repeat="resident in residents.residents | filter: search" >
+        <md-list-item class="sidenav-list-item" layout="row" layout-align="start center" ng-click=""  ng-repeat="resident in residents.residents | filter: {status:residents.statusFilter} | filter: {firstName: residents.searchFilter}" >
           <!-- Resident Button -->
-          <md-button layout="row" layout-align="start center" ng-click="" flex>
-            
-            <img class="md-avatar" ng-src={{resident.avatar}}>
-            
-            
-            <p class="list-text">
-              {{resident.firstName}} {{resident.lastName}}
-            </p>
-            
-            <md-divider></md-divider>
-          </md-button>
-    
-          
-    
+
+          <al-resident-list-item resident="resident"></al-resident-list-item>
+
+          <md-divider></md-divider>
+
         </md-list-item>
       </md-list>
 
@@ -145,5 +136,9 @@
 
 </section>
 
-<md-sidenav id="resident-sidenav-right" class="md-sidnav-right md-whiteframe-z1" md-component-id="right" layout="column" md-is-locked-open="true"></md-sidenav>
+
+
+<md-sidenav id="resident-sidenav-right" class="md-sidnav-right md-whiteframe-z1" md-component-id="right" layout="column" md-is-locked-open="true">
+
+</md-sidenav>
   

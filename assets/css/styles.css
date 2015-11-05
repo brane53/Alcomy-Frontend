@@ -1,6 +1,19 @@
 /* .toolbar-items span {
     margin-left: 1.4em;
 } */
+/*::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}*/
 /*This is a gray rec placeholder*/
 .placeholder {
   margin: 100px;
@@ -89,15 +102,41 @@ md-toolbar .md-menu {
       background-color: white;
       padding: 5px 10px; }
 
-/*Right Sidenav*/
-#resident-sidenav-right {
-  background-color: tan;
-  position: relative;
-  overflow: auto;
-  z-index: 1; }
+/*Resident List*/
+.resident-list md-list-item {
+  cursor: pointer; }
+.resident-list md-list-item:hover {
+  background-color: #d3d3d3; }
 
-/* Sidenav Vertical Menu Styles */
+md-list-item {
+  margin: 0; }
+  md-list-item > button.md-button, md-list-item a.md-button {
+    margin: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    /*padding-left: 16px;*/ }
+
+/* Any .md-avatar found within a md-list-item will get these properties */
+md-list-item .md-avatar {
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 16px;
+  margin-left: 16px;
+  border-radius: 50%;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; }
+
 /* =========================================================================== */
+/* Sidenav Vertical Menu Styles */
 .sidenav-vertical-menu {
   position: relative;
   width: 45px;
@@ -133,38 +172,19 @@ md-backdrop.md-sidenav-backdrop {
 .sidenav-list-item.md-no-proxy {
   padding: 0; }
 
+/*Right Sidenav*/
+#resident-sidenav-right {
+  background-color: tan;
+  position: relative;
+  overflow: auto;
+  z-index: 1; }
+
 /* =========================================================================== */
-md-list-item {
-  margin: 0; }
-  md-list-item > button.md-button, md-list-item a.md-button {
-    margin: 0;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    padding-left: 16px; }
-
-/* Any .md-avatar found within a md-list-item will get these properties */
-md-list-item .md-avatar {
-  width: 40px;
-  height: 40px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  margin-right: 16px;
-  border-radius: 50%;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box; }
-
 /* Middle Section of the App */
 section.center-container {
   position: relative;
   z-index: 1;
-  padding: 40px;
+  padding: 40px 0;
   /* .profile-detail {
         
     } */ }
@@ -222,19 +242,20 @@ section.center-container {
   width: 60%;
   height: 70%; }
   #new-resident-dialog md-dialog-content {
-    width: 100%; }
-    #new-resident-dialog md-dialog-content form {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex; }
+    width: 100%;
+    padding: 0; }
     #new-resident-dialog md-dialog-content .dialog-panel {
-      padding-left: 24px;
-      padding-right: 24px; }
+      padding-right: 24px;
+      padding-left: 24px; }
       #new-resident-dialog md-dialog-content .dialog-panel.left {
-        border-right: 1px solid #BDBDBD; }
+        border-right: 1px solid #BDBDBD;
+        padding: 0;
+        padding-top: 10px; }
       #new-resident-dialog md-dialog-content .dialog-panel.right {
         border-left: 1px solid #BDBDBD; }
+
+.buttonHighlight {
+  color: skyblue; }
 
 /* MEDICATION LIST TOOLBAR */
 .med-list-toolbar {

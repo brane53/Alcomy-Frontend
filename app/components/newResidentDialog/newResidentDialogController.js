@@ -16,6 +16,14 @@
         vm.gender = '';
         vm.weight = '';
 
+        vm.category = 'basic';
+
+        vm.changeCategory = changeCategory;
+
+        function changeCategory(category){
+            vm.category = category;
+        }
+
 
 
         vm.closeDialog = closeDialog;

@@ -25,15 +25,36 @@
         )
 
         .config(['$mdThemingProvider', function($mdThemingProvider) {
+
+          // Extend the red theme with a few different colors
+          var greyColorMap = $mdThemingProvider.extendPalette('grey', {
+            '50': 'ffffff'
+          });
+          // Register the new color palette map with the name <code>neonRed</code>
+          $mdThemingProvider.definePalette('altGrey', greyColorMap);
+
           $mdThemingProvider.theme('default')
-          .primaryPalette('light-blue')
-          .accentPalette('light-green',{
-            'default': '500', 
-            'hue-1': '100', // use shade 100 for the <code>md-hue-1</code> class
-            'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
-            'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
-          })
-          .warnPalette('red');
+            .primaryPalette('light-blue')
+            .accentPalette('light-green',{
+              'default': '500',
+              'hue-1': '100', // use shade 100 for the <code>md-hue-1</code> class
+              'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
+              'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
+            })
+            .warnPalette('red');
+
+          $mdThemingProvider.theme('background')
+            .primaryPalette('altGrey',{
+              'default': '900',
+              'hue-1': '50', // use shade 100 for the <code>md-hue-1</code> class
+              'hue-2': '800', // use shade 600 for the <code>md-hue-2</code> class
+              'hue-3': '500' // use shade A100 for the <code>md-hue-3</code> class
+            })
+            .accentPalette('light-green',{
+
+            })
+            .warnPalette('red').dark();
+
         }])
 
 
@@ -70,7 +91,12 @@
               abstract: true,
               url: '/residents/{residentId}',
               templateUrl: 'app/components/residents/residents.html',
-              controller: 'ResidentsController as residents'
+              controller: 'ResidentsController as residents',
+              resolve: {
+                residentId : ['$stateParams', function($stateParams){
+                  return $stateParams.residentId;
+                }]
+              }
 
             })
             .state('residents.todos',{

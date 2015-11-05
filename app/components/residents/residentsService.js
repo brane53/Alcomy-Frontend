@@ -16,6 +16,7 @@
                 dob: '1987-11-10',
                 favoriteRestaurant: 'Tucanos',
                 avatar: 'production/assets/images/avatars/brane.jpg',
+                status: 'active',
                 medications: [
                     {
                     id: 1,
@@ -70,7 +71,8 @@
                 lastName: 'Vrajich',
                 dob: '1987-11-10',
                 favoriteRestaurant: 'JDawgs',
-                avatar: 'production/assets/images/avatars/ilija.jpg'
+                avatar: 'production/assets/images/avatars/ilija.jpg',
+                status: 'active'
             },
             {
                 residentId: 3,
@@ -78,7 +80,8 @@
                 lastName: 'Vrajich',
                 dob: '1987-11-10',
                 favoriteRestaurant: 'Carabbas',
-                avatar: 'production/assets/images/avatars/rebekah.jpg'
+                avatar: 'production/assets/images/avatars/rebekah.jpg',
+                status: 'active'
             },
             {
                 residentId: 4,
@@ -86,7 +89,8 @@
                 lastName: 'Kunz',
                 dob: '1987-11-10',
                 favoriteRestaurant: 'In N Out',
-                avatar: 'production/assets/images/avatars/justin.jpg'
+                avatar: 'production/assets/images/avatars/justin.jpg',
+                status: 'active'
             },
             {
                 residentId: 5,
@@ -94,7 +98,8 @@
                 lastName: 'Wells',
                 dob: '1987-11-10',
                 favoriteRestaurant: 'Cruise Ship Food',
-                avatar: 'production/assets/images/avatars/tommy.jpg'
+                avatar: 'production/assets/images/avatars/tommy.jpg',
+                status: 'active'
             },
             {
                 residentId: 6,
@@ -102,7 +107,8 @@
                 lastName: 'Vrajich',
                 dob: '1987-11-10',
                 favoriteRestaurant: 'Tucanos',
-                avatar: 'production/assets/images/avatars/ruth.jpg'
+                avatar: 'production/assets/images/avatars/ruth.jpg',
+                status: 'active'
             },
             {
                 residentId: 7,
@@ -110,31 +116,35 @@
                 lastName: 'Vrajich',
                 dob: '1987-11-10',
                 favoriteRestaurant: 'JDawgs',
-                avatar: 'production/assets/images/avatars/milan.jpg'
+                avatar: 'production/assets/images/avatars/milan.jpg',
+                status: 'gone'
             },
             {
                 residentId: 8,
                 firstName: 'Blake',
                 lastName: 'Kenworthy',
-                dob: '1987-11-10',
+                dob: '1988-09-10',
                 favoriteRestaurant: 'Carabbas',
-                avatar: 'production/assets/images/avatars/blake.jpg'
+                avatar: 'production/assets/images/avatars/blake.jpg',
+                status: 'gone'
             },
             {
                 residentId: 9,
                 firstName: 'Josh',
                 lastName: 'Wood',
-                dob: '1987-11-10',
+                dob: '1991-11-11',
                 favoriteRestaurant: 'In N Out',
-                avatar: 'production/assets/images/avatars/josh.jpg'
+                avatar: 'production/assets/images/avatars/josh.jpg',
+                status: 'gone'
             },
             {
                 residentId: 10,
                 firstName: 'Kevin',
                 lastName: 'Kunz',
-                dob: '1987-11-10',
+                dob: '1987-07-10',
                 favoriteRestaurant: 'Cruise Ship Food',
-                avatar: 'production/assets/images/avatars/kevin.jpg'
+                avatar: 'production/assets/images/avatars/kevin.jpg',
+                status: 'gone'
             }
         ];
 

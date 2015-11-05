@@ -1,87 +1,135 @@
 <md-dialog id="new-resident-dialog">
-  <md-toolbar class="md-toolbar-tools md-primary">
+  <!-- NEW RESIDENT FORM -->
+  <form name="newResidentForm" flex>
+
+    <!--Form Topbar-->
+    <md-toolbar class="md-toolbar-tools md-primary">
 
       <h1>New Resident Form</h1>
 
-  </md-toolbar>
+    </md-toolbar>
 
+    <!--Main Form Content-->
+    <md-dialog-content layout="row" flex>
 
-  <md-dialog-content layout="row" flex>
-      
-
-   <!-- NEW RESIDENT FORM -->
-    <form name="newResidentForm" flex>
-
+      <!--Right Nav Pane-->
       <div class="dialog-panel left" layout="column" flex="20">
-          <h1>Left Sidebar</h1>
+        <md-button ng-class="{buttonHighlight: newResident.category == 'basic'}" ng-click="newResident.changeCategory('basic')">Basic Info</md-button>
+        <md-button ng-class="{buttonHighlight: newResident.category == 'emergency'}" ng-click="newResident.changeCategory('emergency')">Emergency</md-button>
+
       </div>
 
-      <div class="dialog-panel" layou="column" flex>
+      <!--Left Form Pane-->
+      <div class="dialog-panel right" layout="column" flex>
 
-        <!-- FIRST NAME -->
-        <md-input-container>
-          <label>First Name</label>
-          <input name="firstName" ng-model="newResident.firstName" required md-maxlength="20">
 
-          <div ng-messages="newResidentForm.firstName.$error" ng-show="newResidentForm.firstName.$dirty">
-            <div ng-message="required">This is required!</div>
-            <div ng-message="md-maxlength">That's too long!</div>
-            <div ng-message="minlength">That's too short!</div>
+        <!--BASIC INFO FIELDSET-->
+
+        <div ng-show="newResident.category == 'basic'">
+          <h2>Basic Information</h2>
+          <div layout="row">
+            <!-- FIRST NAME -->
+            <md-input-container flex>
+
+              <label>First Name</label>
+              <input name="firstName" ng-model="newResident.firstName" required md-minlength="1" md-maxlength="20">
+
+              <div ng-messages="newResidentForm.firstName.$error" ng-show="newResidentForm.firstName.$dirty">
+                <div ng-message="required">This is required!</div>
+                <div ng-message="md-maxlength">That's too long!</div>
+                <div ng-message="minlength">That's too short!</div>
+              </div>
+            </md-input-container>
+
+            <!--MIDDLE NAME-->
+            <div flex>
+              <md-input-container>
+                <label>Middle Name</label>
+                <input name="firstName" ng-model="newResident.middleName" md-minlength="1" md-maxlength="20">
+
+                <div ng-messages="newResidentForm.middleName.$error" ng-show="newResidentForm.middleName.$dirty">
+                  <div ng-message="md-maxlength">That's too long!</div>
+                  <div ng-message="minlength">That's too short!</div>
+                </div>
+              </md-input-container>
+            </div>
+
+            <!-- LAST NAME -->
+            <div flex>
+              <md-input-container>
+
+                <label>Last Name</label>
+                <input name="lastName" ng-model="newResident.lastName" required md-maxlength="20">
+
+                <div ng-messages="newResidentForm.lastName.$error" ng-show="newResidentForm.lastName.$dirty">
+                  <div ng-message="required">This is required!</div>
+                  <div ng-message="md-maxlength">That's too long!</div>
+                  <div ng-message="minlength">That's too short!</div>
+                </div>
+              </md-input-container>
+            </div>
+
           </div>
-        </md-input-container>
 
-        <!-- LAST NAME -->
-        <md-input-container>
-          <label>Last Name</label>
-          <input name="lastName" ng-model="newResident.lastName" required md-maxlength="20">
 
-          <div ng-messages="newResidentForm.lastName.$error" ng-show="newResidentForm.lastName.$dirty">
-            <div ng-message="required">This is required!</div>
-            <div ng-message="md-maxlength">That's too long!</div>
-            <div ng-message="minlength">That's too short!</div>
+          <div layout="row">
+
+            <!-- GENDER -->
+            <div flex="33">
+              <md-input-container>
+                <label>Gender</label>
+                <md-select name="gender" required ng-model="newResident.gender">
+                  <md-option value="Male">Male</md-option>
+                  <md-option value="Female">Female</md-option>
+                </md-select>
+
+                <div ng-messages="newResidentForm.gender.$error" ng-show="newResidentForm.gender.$dirty">
+                  <div ng-message="required">This is required!</div>
+                </div>
+              </md-input-container>
+            </div>
+
+
+            <!-- DATE OF BIRTH -->
+            <div flex="33">
+
+                <md-datepicker name="birthDate" ng-model="newResident.birthDate" required ></md-datepicker>
+
+                <div ng-messages="newResidentForm.birthDate.$error" ng-show="newResidentForm.birthDate.$dirty">
+                  <div ng-message="required">This is required!</div>
+
+                </div>
+            </div>
+
+
+
           </div>
-        </md-input-container>
+        </div>
 
 
-        <!-- DATE OF BIRTH -->
-        <md-input-container>
-          <label>Date of Birth</label>
-          <input name="birthDate" ng-model="newResident.birthDate" required md-maxlength="20">
-
-          <div ng-messages="newResidentForm.birthDate.$error" ng-show="newResidentForm.birthDate.$dirty">
-            <div ng-message="required">This is required!</div>
-            <div ng-message="md-maxlength">That's too long!</div>
-            <div ng-message="minlength">That's too short!</div>
-          </div>
-        </md-input-container>
+        <!--EMERGENCY CONTACT FIELDSET-->
+        <div ng-show="newResident.category =='emergency'">
+          <h2>Emergency Contact Information</h2>
+        </div>
 
 
-        <!-- GENDER -->
-        <md-input-container>
-          <label>Gender</label>
-          <md-select name="gender" required ng-model="newResident.gender">
-            <md-option value="Male">Male</md-option>
-            <md-option value="Female">Female</md-option>
-          </md-select>
 
-          <div ng-messages="newResidentForm.gender.$error" ng-show="newResidentForm.gender.$dirty">
-            <div ng-message="required">This is required!</div>
-          </div>
-        </md-input-container>
-        
       </div>
-    </form>
+
+
 
   </md-dialog-content>
 
-
-  <div class="md-actions">
+    <div class="md-actions">
     <md-button class="md-primary">
-        ADD
+      ADD
     </md-button>
     <md-button ng-click="newResident.closeDialog()">
-        CANCEL
+      CANCEL
     </md-button>
   </div>
+
+  </form>
+
 </md-dialog>
 

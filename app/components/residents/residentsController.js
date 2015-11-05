@@ -49,17 +49,77 @@
 
         ]);*/
 
-
+        vm.searchFilter = '',
+        vm.statusFilter = 'active';
         vm.statuses = [
-            "All Residents",
-            "Current Residents",
-            "Past Residents",
-            "Deceased Residents"
+
+            {
+                name: "All Residents",
+                value: ''
+            },
+            {
+                name: "Current Residents",
+                value: 'active'
+            },
+            {
+                name: "Past Residents",
+                value: 'gone'
+            },
+            {
+                name: "Deceased Residents",
+                value: 'deceased'
+            }
 
         ];
 
+        vm.filterResidents = filterResidents;
+
+        function filterResidents(){
+
+            return function(residents, filter1, filter2) {
+
+                var output = [];
+                var filteredResidents = [];
+
+
+                if (filter1.status === 'all') {
+                    angular.forEach(residents, function (resident) {
+                        filteredResidents.push(resident);
+                    });
+                } else if (filter1.status === 'active') {
+                    angular.forEach(residents, function (resident) {
+                        if (resident.status === 'active') {
+                            filteredResidents.push(resident);
+                        }
+                    });
+                } else if (filter1.status === 'inactive') {
+                    angular.forEach(residents, function (resident) {
+                        if (resident.status === 'inactive') {
+                            filteredResidents.push(resident);
+                        }
+                    });
+                } else if (filter1.status === 'deceased') {
+                    angular.forEach(residents, function (resident) {
+                        if (resident.status === 'deceased') {
+                            filteredResidents.push(resident);
+                        }
+                    });
+                }
+
+                angular.forEach(filteredResidents, function (resident) {
+                    if (resident.$ === filter2) {
+                        output.push(resident);
+                    }
+                });
+
+                return output;
+            }
+        }
+
         vm.showNewResidentDialog = showNewResidentDialog;
-        
+
+
+
         /**
          *  [showNewResidentDialog displays a form to add
          *  a new resident. It is a custom dialog created
